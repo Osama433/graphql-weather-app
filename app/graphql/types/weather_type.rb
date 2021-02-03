@@ -1,5 +1,6 @@
 module Types
   class WeatherType < Types::BaseObject
+    field :city, String, null: false
     field :condition, String, null: false
     field :icon, ID, null: false
     field :temp, Float, null: false

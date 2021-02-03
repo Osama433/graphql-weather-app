@@ -3,20 +3,12 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-    field :weather, Types::WeatherType, null: false
+    field :weather, Types::WeatherType, null: false do
+      argument :city, String, required: true
+    end
 
-    def weather
-      {
-          condition: "Clear",
-          icon: "01d",
-          temp: 12.55,
-          feelsLike: 11.86,
-          minTemp: 10.37,
-          maxTemp: 14.26,
-          pressure: 1023,
-          humidity: 100,
-          lastUpdated: 1560350645
-      }
+    def weather(city:)
+      OpenWeather::WeatherDataRetriever.get_weather_data(city)
     end
   end
 end

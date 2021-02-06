@@ -15,7 +15,7 @@ module OpenWeather
         raise WeatherDataNotFound.new(response_body['message'])
       end
       {
-          city: location,
+          city: location.capitalize,
           condition: response_body['weather'][0]['main'],
           icon: response_body['weather'][0]['icon'],
           temp: response_body['main']['temp'],

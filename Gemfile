@@ -10,11 +10,9 @@ gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 gem 'graphql'
+gem 'faraday'
 
 gem 'bootsnap', '>= 1.4.4', require: false
-
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -24,4 +22,5 @@ end
 group :development do
   gem 'listen', '~> 3.3'
   gem 'graphiql-rails'
+  gem 'dotenv-rails'
 end

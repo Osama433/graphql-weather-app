@@ -5,6 +5,10 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 .idea/**/workspace.xml
+.idea/**
+.DS_Store
+app/.DS_Store
+vendor/**
 
 # Ignore bundler config.
 /.bundle

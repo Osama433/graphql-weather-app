@@ -2,6 +2,9 @@ class GraphqlWeatherAppSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
+  rescue_from OpenWeather::WeatherDataNotFound do |exception|
+    raise GraphQL::ExecutionError, exception.message
+  end
   # Union and Interface Resolution
   def self.resolve_type(abstract_type, obj, ctx)
     # TODO: Implement this function
